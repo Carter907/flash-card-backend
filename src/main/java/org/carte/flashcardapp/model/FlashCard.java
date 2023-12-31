@@ -8,13 +8,17 @@ import static java.lang.StringTemplate.STR;
 public class FlashCard {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     @Column(nullable = false, unique = true)
     private String front;
 
     @Column(nullable = false, unique = true)
     private String back;
+
+    @ManyToOne
+    @JoinColumn(name = "deck_id", nullable = false)
+    private Deck deck;
 
     public FlashCard() {
 

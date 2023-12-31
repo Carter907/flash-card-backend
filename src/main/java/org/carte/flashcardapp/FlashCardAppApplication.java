@@ -24,8 +24,7 @@ public class FlashCardAppApplication {
     public CommandLineRunner cli() {
         return (String... args) -> {
 
-            repo.save(new FlashCard("Is Earth flat?", "yes"));
-            System.out.println(repo.findAll());
+
         };
     }
 }
